@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 using mea = Microsoft.Extensions.AI;
 
 namespace Test.Mscc.GenerativeAI.Microsoft

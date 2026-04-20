@@ -103,9 +103,10 @@ namespace Mscc.GenerativeAI.Types
         public const string DeepResearchPro = DeepResearchProPreview;
         public const string DeepResearchProPreview = DeepResearchProPreview122025;
         public const string DeepResearchProPreview122025 = "deep-research-pro-preview-12-2025";
-        
-        // Gemma 3
-        public const string Gemma3 = Gemma3_27B;
+
+		// Gemma 3  DEPRECATED as of 4/30/26
+		
+		public const string Gemma3 = Gemma3_27B;
         // public const string Gemma3_270M = "gemma-3-270m-it";
         public const string Gemma3_1B = "gemma-3-1b-it";
         public const string Gemma3_4B = "gemma-3-4b-it";
@@ -115,8 +116,13 @@ namespace Mscc.GenerativeAI.Types
         public const string Gemma3n_E2B = "gemma-3n-e2b-it";
         public const string Gemma3n_E4B = "gemma-3n-e4b-it";
 
-        // PaLM 2 models
-        public const string BisonText001 = "text-bison-001";
+		// Gemma 4
+
+		public const string Gemma4_31B = "gemma-4-31b-it";
+		public const string Gemma4_26B = "gemma-4-26b-a4b-it";
+
+		// PaLM 2 models
+		public const string BisonText001 = "text-bison-001";
         public const string BisonText002 = "text-bison-002";
         public const string BisonText = BisonText001;
         public const string BisonText32k002 = "text-bison-32k-002";

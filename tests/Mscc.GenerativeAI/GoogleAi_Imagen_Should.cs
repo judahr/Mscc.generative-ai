@@ -8,7 +8,6 @@ using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using System.IO;
 using Xunit;
-using Xunit.Abstractions;
 using GoogleAI = Mscc.GenerativeAI.GoogleAI;
 
 namespace Test.Mscc.GenerativeAI

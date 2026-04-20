@@ -15,7 +15,7 @@ namespace Test.Mscc.GenerativeAI
     /// https://github.com/GoogleCloudPlatform/dotnet-docs-samples/tree/main/aiplatform/api/AIPlatform.Samples
     /// </summary>
     [Collection(nameof(ConfigurationFixture))]
-    public class AiPlatformSamplesShould(ITestOutputHelper output, ConfigurationFixture fixture)
+    public class AiPlatformSamplesShould(Xunit.Abstractions.ITestOutputHelper output, ConfigurationFixture fixture)
     {
         private readonly string _model = Model.GeminiPro;
 

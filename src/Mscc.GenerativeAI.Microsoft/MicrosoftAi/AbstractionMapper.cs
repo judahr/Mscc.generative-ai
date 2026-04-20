@@ -722,14 +722,14 @@ namespace Mscc.GenerativeAI.Microsoft
 					{
 						content = ToFunctionResultContent(part.FunctionResponse);
 					}
-					else if (part.ExecutableCode?.Code is not null)
-					{
-						content = ToCodeInterpreterToolCallContent(part.ExecutableCode);
-					}
-					else if (part.CodeExecutionResult?.Output is not null)
-					{
-						content = ToCodeInterpreterToolResultContent(part.CodeExecutionResult);
-					}
+					//else if (part.ExecutableCode?.Code is not null)
+					//{
+					//	content = ToCodeInterpreterToolCallContent(part.ExecutableCode);
+					//}
+					//else if (part.CodeExecutionResult?.Output is not null)
+					//{
+					//	content = ToCodeInterpreterToolResultContent(part.CodeExecutionResult);
+					//}
 					else
 					{
 						Debug.WriteLine($"Part '{part.GetType()}' has not been mapped to AIContent. Using RawRepresentation only.");
@@ -821,51 +821,51 @@ namespace Mscc.GenerativeAI.Microsoft
 			// return content;
 		}
 
-		/// <summary>
-		/// Maps a <see cref="ExecutableCode"/> to a <see cref="mea.CodeInterpreterToolCallContent"/>.
-		/// </summary>
-		/// <param name="executableCode"></param>
-		/// <returns></returns>
-		private static mea.CodeInterpreterToolCallContent ToCodeInterpreterToolCallContent(
-			ExecutableCode executableCode)
-		{
-			var content = new mea.CodeInterpreterToolCallContent()
-			{
-				Inputs = new List<mea.AIContent>()
-				{
-					new mea.DataContent(Encoding.UTF8.GetBytes(executableCode.Code),
-						executableCode.Language switch
-						{
-							ExecutableCode.LanguageType.Python => "text/x-python",
-							_ => "text/x-source-code",
-						})
-				}
-			};
-			return content;
-		}
+		///// <summary>
+		///// Maps a <see cref="ExecutableCode"/> to a <see cref="mea.CodeInterpreterToolCallContent"/>.
+		///// </summary>
+		///// <param name="executableCode"></param>
+		///// <returns></returns>
+		//private static mea.CodeInterpreterToolCallContent ToCodeInterpreterToolCallContent(
+		//	ExecutableCode executableCode)
+		//{
+		//	var content = new mea.CodeInterpreterToolCallContent()
+		//	{
+		//		Inputs = new List<mea.AIContent>()
+		//		{
+		//			new mea.DataContent(Encoding.UTF8.GetBytes(executableCode.Code),
+		//				executableCode.Language switch
+		//				{
+		//					ExecutableCode.LanguageType.Python => "text/x-python",
+		//					_ => "text/x-source-code",
+		//				})
+		//		}
+		//	};
+		//	return content;
+		//}
 
-		/// <summary>
-		/// Maps a <see cref="CodeExecutionResult"/> to a <see cref="mea.CodeInterpreterToolResultContent"/>.
-		/// </summary>
-		/// <param name="codeExecutionResult"></param>
-		/// <returns></returns>
-		private static mea.CodeInterpreterToolResultContent ToCodeInterpreterToolResultContent(
-			CodeExecutionResult codeExecutionResult)
-		{
-			var content = new mea.CodeInterpreterToolResultContent()
-			{
-				Outputs = new List<mea.AIContent>()
-				{
-					codeExecutionResult.Outcome is Outcome.OutcomeOk
-						? new mea.TextContent(codeExecutionResult.Output)
-						: new mea.ErrorContent(codeExecutionResult.Output)
-						{
-							ErrorCode = codeExecutionResult.Outcome.ToString()
-						}
-				}
-			};
-			return content;
-		}
+		///// <summary>
+		///// Maps a <see cref="CodeExecutionResult"/> to a <see cref="mea.CodeInterpreterToolResultContent"/>.
+		///// </summary>
+		///// <param name="codeExecutionResult"></param>
+		///// <returns></returns>
+		//private static mea.CodeInterpreterToolResultContent ToCodeInterpreterToolResultContent(
+		//	CodeExecutionResult codeExecutionResult)
+		//{
+		//	var content = new mea.CodeInterpreterToolResultContent()
+		//	{
+		//		Outputs = new List<mea.AIContent>()
+		//		{
+		//			codeExecutionResult.Outcome is Outcome.OutcomeOk
+		//				? new mea.TextContent(codeExecutionResult.Output)
+		//				: new mea.ErrorContent(codeExecutionResult.Output)
+		//				{
+		//					ErrorCode = codeExecutionResult.Outcome.ToString()
+		//				}
+		//		}
+		//	};
+		//	return content;
+		//}
 
 		/// <summary>
 		/// Maps a <see cref="Mscc.GenerativeAI.Role"/> to a <see cref="mea.ChatRole"/>.

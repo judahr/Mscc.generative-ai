@@ -5,7 +5,6 @@ using Shouldly;
 using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Test.Mscc.GenerativeAI
 {

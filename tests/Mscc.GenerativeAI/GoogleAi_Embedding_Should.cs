@@ -7,7 +7,6 @@ using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using Neovolve.Logging.Xunit;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Test.Mscc.GenerativeAI
 {

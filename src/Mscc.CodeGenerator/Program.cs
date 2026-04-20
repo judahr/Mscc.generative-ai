@@ -281,15 +281,15 @@ namespace Mscc.CodeGenerator
 
 			if (!string.IsNullOrEmpty(_name))
 			{
-				text = text.Replace(_name, "", StringComparison.InvariantCultureIgnoreCase);
+				text = text.Replace(_name, String.Empty, StringComparison.InvariantCultureIgnoreCase);
 			}
 
 			if (!string.IsNullOrEmpty(_version))
 			{
-				text = text.Replace(_version, "", StringComparison.InvariantCultureIgnoreCase);
+				text = text.Replace(_version, String.Empty, StringComparison.InvariantCultureIgnoreCase);
 			}
 
-			text = text.Replace("GoogleCloud", "", StringComparison.InvariantCultureIgnoreCase);
+			text = text.Replace("GoogleCloud", String.Empty, StringComparison.InvariantCultureIgnoreCase);
 
 			// 2. Use Regex.Replace with a MatchEvaluator
 			// This executes the replacement logic in a single pass.

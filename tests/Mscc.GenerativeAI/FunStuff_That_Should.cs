@@ -7,6 +7,7 @@ using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using Xunit;
 using Xunit.Abstractions;
+using ITestOutputHelper = Xunit.Abstractions.ITestOutputHelper;
 
 namespace Test.Mscc.GenerativeAI
 {

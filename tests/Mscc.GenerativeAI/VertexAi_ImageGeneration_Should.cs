@@ -11,7 +11,6 @@ using Mscc.GenerativeAI.Types;
 using Neovolve.Logging.Xunit;
 using System.Collections;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Test.Mscc.GenerativeAI
 {
